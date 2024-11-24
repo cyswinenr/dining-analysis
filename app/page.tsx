@@ -1,9 +1,10 @@
-import React from 'react';
+import DiningAnalysisClient from './components/DiningAnalysisClient';
 
-// 导入客户端组件
-import DiningAnalysisClient from './DiningAnalysisClient';
+export const metadata = {
+  title: '用餐记录分析系统',
+  description: '分析用餐记录和统计',
+};
 
-// 页面组件
 export default function Home() {
   return (
     <main className="min-h-screen p-4 bg-gray-50">

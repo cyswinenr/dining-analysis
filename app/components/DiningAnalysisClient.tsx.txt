@@ -1,8 +1,10 @@
-'use client';
+'use client';  // 这行必须在最顶部
 
 import React, { useState, useMemo } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, LineChart, Line } from 'recharts';
+
+// 这里放之前的组件代码
 
 const DiningAnalysisClient = () => {
   // 状态管理
