@@ -1,10 +1,10 @@
-'use client';  // 标记为客户端组件
+'use client';
 
 import React, { useState, useMemo } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, LineChart, Line } from 'recharts';
 
-const DiningAnalysisSystem = () => {
+const DiningAnalysisClient = () => {
   // 状态管理
   const [rawData, setRawData] = useState('');
   const [selectedPerson, setSelectedPerson] = useState('all');
@@ -12,7 +12,7 @@ const DiningAnalysisSystem = () => {
   const [dateRange, setDateRange] = useState({ start: '', end: '' });
 
   // 数据处理函数
-  const processData = (text) => {
+  const processData = (text: string) => {
     const lines = text.trim().split(/[\n\r]+/);
     return lines.map(line => {
       const parts = line.split(/\s+/);
@@ -96,11 +96,11 @@ const DiningAnalysisSystem = () => {
   }, [filteredData]);
 
   // 处理文件上传
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = (e) => setRawData(e.target.result);
+      reader.onload = (e) => setRawData(e.target?.result as string);
       reader.readAsText(file);
     }
   };
@@ -258,4 +258,4 @@ const DiningAnalysisSystem = () => {
   );
 };
 
-export default DiningAnalysisSystem;
+export default DiningAnalysisClient;
