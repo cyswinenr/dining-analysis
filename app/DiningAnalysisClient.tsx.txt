@@ -1,8 +1,4 @@
-import DiningAnalysisClient from './DiningAnalysisClient';
-
-export default function Page() {
-  return <DiningAnalysisClient />;
-}
+'use client';  // 标记为客户端组件
 
 import React, { useState, useMemo } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
