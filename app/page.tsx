@@ -1,10 +1,5 @@
 import DiningAnalysisClient from './components/DiningAnalysisClient';
 
-export const metadata = {
-  title: '用餐记录分析系统',
-  description: '分析用餐记录和统计',
-};
-
 export default function Home() {
   return (
     <main className="min-h-screen p-4 bg-gray-50">
